@@ -1,0 +1,34 @@
+
+<!DOCTYPE html> 
+  {% extends "bootstrap/base.html" %}
+{% block content %}
+<html> 
+<head> 
+    <title>Danh sách QR Code</title> 
+</head> 
+<body> 
+  <h2 class="text-primary text-center">Danh sách sinh viên</h2>
+  <table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Stt</th>
+        <th scope="col">Mã sinh viên</th>
+        <th scope="col">Tên sinh viên</th>
+        <th scope="col">QR CODE</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%for i in range(0, len)%}
+        <tr class="table-primary">
+        <td>{{i+1}}</td>
+        <td>{{students[i][0]}}</td>
+        <td>{{students[i][1]}}</td>
+        <td><img src='{{students[i][2]}}' width="50px" height="50px"></td>
+        </tr>
+        {%endfor%} 
+    </tbody>
+  </table>
+
+</body> 
+</html> 
+{% endblock %}
